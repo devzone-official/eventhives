@@ -1,0 +1,13 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^admin/([A-Za-z0-9-]+)/?$ index.php?user=admin&action=$1 [QSA]
+RewriteRule ^admin/?$ index.php?user=admin&action= [QSA]
+RewriteRule ^vendor/([A-Za-z0-9-]+)/?$ index.php?user=vendor&action=$1 [QSA]
+RewriteRule ^vendor/?$ index.php?user=vendor&action= [QSA]
+RewriteRule ^services/([A-Za-z0-9-]+)/?$ index.php?user=customer&action=services&type=$1 [QSA]
+RewriteRule ^services/?$ index.php?user=customer&action=services&type= [QSA]
+RewriteRule ^([A-Za-z0-9-]+)/?$ index.php?user=customer&action=$1 [QSA]
+RewriteRule ^/?$ index.php?user=customer&action= [QSA]

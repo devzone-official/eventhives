@@ -1,0 +1,37 @@
+{
+  "description": "Eventhives, An Online Event management System",
+  "scripts": {
+    "build": "npm run build:main",
+    "build:main": "npm run build:jsBundle",
+    "build:jsBundle": "browserify -r xhpjs -r react -r MyReactClass -r AddVendorForm -o public/assets/js/bundle.js",
+    "build:exampleJSX": "jsx libs/js/ libs/build/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/devzone-official/eventhives.git"
+  },
+  "author": "Hari Krishnan",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/devzone-official/eventhives.git/issues"
+  },
+  "dependencies": {
+    "xhpjs": "~1.0.0",
+    "browserify": "~9.0.8",
+    "reactify": "~1.1.0",
+    "react": "~0.13.1",
+    "react-tools": "~0.13.1"
+  },
+  "browser": {
+    "MyReactClass": "./libs/js/components/MyReactClass.js",
+    "AddVendorForm": "./libs/js/components/AddVendorForm.js"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.1.4"
+  }
+}
